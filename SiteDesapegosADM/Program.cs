@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+builder.Services.AddDbContext<DesapegoDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DesapegoDbContext")));
 
 var app = builder.Build();
 
