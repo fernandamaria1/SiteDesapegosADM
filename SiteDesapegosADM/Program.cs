@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SiteDesapegosADM.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddDbContext<DesapegoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DesapegoDbContext")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

@@ -6,6 +6,7 @@ namespace SiteDesapegosADM.Models
     {
         public DesapegoDbContext(DbContextOptions<DesapegoDbContext> options) : base(options) { }
 
+        public DbSet<Administrador> AdminUsers { get; set; }
 
     }
     
